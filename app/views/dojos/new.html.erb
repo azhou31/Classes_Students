@@ -1,0 +1,14 @@
+<h2>New Dojo</h2>
+    <span style = "color:red"><%= flash[:errors] %></span>
+    <span style = "color:green"><%= flash[:success] %></span>
+
+<form action ="/dojos" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <p>Branch: <input type="text" name="dojo[branch]"></p>
+    <p>Street: <input type="text" name="dojo[street]"></p>
+    <p>City: <input type="text" name="dojo[city]"></p>
+    <p>State: <input type="text" name="dojo[state]"></p>
+    <input type="submit" value="Create">
+</form>
+<br><br>
+<p><a href="/dojos">Go Back</a></p>

@@ -1,0 +1,20 @@
+<h2>Add a New Student</h2>
+<span style = "color:red"><%= flash[:errors] %></span>
+<span style = "color:green"><%= flash[:success] %></span>
+
+<form action ="/dojos/<%=@students.dojo_id%>/students" method="POST">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<p>First Name: <input type="text" name="student[first_name]"></p>
+<p>Last Name: <input type="text" name="student[last_name]"></p>
+<p>Email Address: <input type="text" name="student[email]"></p>
+<p>Dojo: <select name="student[dojo_id]">
+    <option>Philly</option>
+    <option>Seattle</option>
+    <option>Hogwarts</option>
+    <option>Los Angeles</option>
+    <option>Chicago</option>
+    </select> </p>
+<input type="submit" value="Create">
+</form>
+<br><br>
+<p><a href="/dojos">Home</a></p>

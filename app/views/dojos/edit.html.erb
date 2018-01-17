@@ -1,0 +1,16 @@
+<h2>Update the Dojo</h2>
+    <span style = "color:red"><%= flash[:errors] %></span>
+    <span style = "color:green"><%= flash[:success] %></span>
+<h2><%=@dojos.branch%></h2>
+    <form action="/dojos/<%=@dojos.id%>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="patch" />
+        <p>Branch: <input type="text" name="dojo[branch]" value="<%=@dojos.branch%>"></p>
+        <p>Street: <input type="text" name="dojo[street]" value="<%=@dojos.street%>"></p>
+        <p>City: <input type="text" name="dojo[city]" value="<%=@dojos.city%>"></p>
+        <p>State: <input type="text" name="dojo[state]" value="<%=@dojos.state%>"></p>
+        <p><input type="submit" value="Update Dojo"></p>
+    </form>
+
+    <br><Br>
+<a href="/dojos">Home</a> | <a href="/dojos/<%=@dojos.id%>">Show Dojo</a>
